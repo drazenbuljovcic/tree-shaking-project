@@ -1,0 +1,38 @@
+{
+  "name": "tree-shaking-project",
+  "version": "0.1.0",
+  "description": "Project that benefits from tree shaking!",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:clean:test": "rm -rf test-build && mkdir test-build",
+    "build:clean": "rm -rf build && mkdir build",
+    "build": "npm run build:clean && webpack --config webpack.config.js",
+    "build:test": "npm run build:clean:test && babel app/src -d test-build",
+    "test": "npm run build:test && node test-build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zendra1994/tree-shaking-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zendra1994/tree-shaking-project/issues"
+  },
+  "homepage": "https://github.com/zendra1994/tree-shaking-project#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10",
+    "which": "^2.0.2"
+  }
+}
