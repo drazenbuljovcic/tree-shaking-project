@@ -4,11 +4,15 @@
       "modules": false
     }]
   ],
-  "plugins": [
-    [
-      "@babel/plugin-transform-modules-commonjs", {
-        "loose": true
-      }
-    ]
-  ]
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "@babel/plugin-transform-modules-commonjs", {
+            "loose": true
+          }
+        ]
+      ]
+    }
+  }
 }

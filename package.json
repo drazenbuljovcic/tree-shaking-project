@@ -11,7 +11,7 @@
     "build:clean": "rm -rf build && mkdir build",
     "build": "npm run build:clean && webpack --config webpack.config.js",
     "build:test": "npm run build:clean:test && babel app/src -d test-build",
-    "test": "npm run build:test && node test-build/index.js"
+    "test": "BABEL_ENV=test npm run build:test && node test-build/index.js"
   },
   "repository": {
     "type": "git",
